@@ -1,0 +1,12 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'chmod +x gradlew'
+                sh './gradlew clean'
+                sh './gradlew build war'
+                sh 'echo "success to produce war"'
+            }
+        }
+}
